@@ -1,21 +1,23 @@
 const { faker } = require('@faker-js/faker');
-const mySql = require('mysql2')
+const mysql2 = require('mysql2')
 
-const connection =  mysql.createConnection({
+const connection =  mysql2.createConnection({
   host: 'localhost',
   user: 'root',
   database: 'delta_app',
-  password: 'mysql@123'
+  password: 'abcd@123456',
 });
 
 try{
   connection.query("SHOW TABLES", (error,result) =>{
-    if(err) throw err;
+    if(error) throw error;
     console.log(result);
   })
-} catch(err) {
-  console.log(err)
+} catch(error) {
+  console.log(error)
 }
+connection.end();
+
 
 let getRandomUser= () => {
   return {
