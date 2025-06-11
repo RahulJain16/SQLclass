@@ -1,7 +1,7 @@
 const { faker } = require('@faker-js/faker');
 const mySql = require('mysql2')
 
-const connection = await mysql.createConnection({
+const connection =  mysql.createConnection({
   host: 'localhost',
   user: 'root',
   database: 'delta_app',
