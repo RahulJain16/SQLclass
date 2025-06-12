@@ -54,7 +54,7 @@ app.get("/user",(req,res) => {
   connection.query(q, (error,result) =>{
     if(error) throw error;
    // console.log(result);
-    res.render("showusers.ejs");
+    res.render("showusers.ejs",{result});
   })
 } catch(error) {
   console.log(error);
