@@ -9,7 +9,8 @@ const connection =  mysql2.createConnection({
 });
 
 let q = "INSERT INTO user (id, username,email,password) VALUES (?,?,?,?)";
-let user = ["123","abc_newuser","123@gmail.com","abc"];
+let user2 = ["123b","abc_newuserb","123@gmail.comb","abcb"];
+let user3 = ["123c","abc_newuserc","123@gmail.comc","abcc"];
 
 try{
   connection.query(q,user, (error,result) =>{
