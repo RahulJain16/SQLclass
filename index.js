@@ -24,8 +24,8 @@ for(let i=1; i<100; i++){
   data.push(getRandomUser());
 }
 
-/*try{
-  connection.query(q,[users], (error,result) =>{
+try{
+  connection.query(q,[data], (error,result) =>{
     if(error) throw error;
     console.log(result);
   })
@@ -33,6 +33,6 @@ for(let i=1; i<100; i++){
   console.log(error)
 }
 connection.end();
-*/
+
 
 
