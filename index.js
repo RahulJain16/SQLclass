@@ -20,13 +20,32 @@ let getRandomUser= () => {
   ];
 }
 
-let q = "INSERT INTO user (id, username,email,password) VALUES ?";
+/*let q = "INSERT INTO user (id, username,email,password) VALUES ?";
 let data = [];
 for(let i=1; i<100; i++){
   data.push(getRandomUser());
 }
+*/  
 
-try{
+
+
+app.get("/",(req,res){
+  res.send("welcome to home page");
+})
+
+
+app.listen("8080",() => {
+console.log("app is listening");
+})
+
+
+
+
+
+
+
+
+/*try{
   connection.query(q,[data], (error,result) =>{
     if(error) throw error;
     console.log(result);
@@ -35,9 +54,4 @@ try{
   console.log(error)
 }
 connection.end();
-
-
-
-app.listen("8080",() => {
-console.log("app is listening");
-})
+*/
