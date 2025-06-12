@@ -51,10 +51,10 @@ app.get("/",(req,res) => {
 app.get("/user",(req,res) => {
   let q = `SELECT * FROM user`;
   try{
-  connection.query(q, (error,result) =>{
+  connection.query(q, (error,users) =>{
     if(error) throw error;
    // console.log(result);
-    res.render("showusers.ejs",{result});
+    res.render("showusers.ejs",{users});
   })
 } catch(error) {
   console.log(error);
@@ -66,7 +66,6 @@ app.get("/user",(req,res) => {
 app.listen("8080",() => {
 console.log("app is listening");
 });
-
 
 
 

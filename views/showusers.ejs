@@ -17,11 +17,14 @@
             <th>Email</th>
             <th>Username</th>
         </tr>
-        <tr>
-            <td>123</td>
-            <td>abc@gmail.com</td>
-            <td>abc</td>
-        </tr>
+        <% for(user of users) { %>
+            <tr>
+                <td><%= user.id%></td>
+                <td><%= user.email%></td>
+                <td><%= user.username%></td>
+            </tr>
+        <% } %>
     </table>
 </body>
 </html>
+
