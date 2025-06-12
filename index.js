@@ -1,5 +1,7 @@
 const { faker } = require('@faker-js/faker');
 const mysql2 = require('mysql2')
+const express = require("express");
+const app = express();
 
 const connection =  mysql2.createConnection({
   host: 'localhost',
@@ -36,3 +38,6 @@ connection.end();
 
 
 
+app.listen("8080",() => {
+console.log("app is listening");
+})
