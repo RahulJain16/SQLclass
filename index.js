@@ -29,8 +29,21 @@ for(let i=1; i<100; i++){
 
 
 
-app.get("/",(req,res){
-  res.send("welcome to home page");
+app.get("/",(req,res) => {
+  let q = `SELECT count(*) FROM user`;
+  
+
+try{
+  connection.query(q, (error,result) =>{
+    if(error) throw error;
+    console.log(result[0]["count(*)"]);
+    res.send("success");
+  })
+} catch(error) {
+  console.log(error);
+  res.send("some error in DB");
+}
+connection.end();
 })
 
 
@@ -44,14 +57,3 @@ console.log("app is listening");
 
 
 
-
-/*try{
-  connection.query(q,[data], (error,result) =>{
-    if(error) throw error;
-    console.log(result);
-  })
-} catch(error) {
-  console.log(error)
-}
-connection.end();
-*/
