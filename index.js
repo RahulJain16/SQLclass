@@ -8,12 +8,12 @@ const connection =  mysql2.createConnection({
   password: 'abcd@123456',
 });
 
-let q = "INSERT INTO user (id, username,email,password) VALUES (?,?,?,?)";
-let user2 = ["123b","abc_newuserb","123@gmail.comb","abcb"];
-let user3 = ["123c","abc_newuserc","123@gmail.comc","abcc"];
+let q = "INSERT INTO user (id, username,email,password) VALUES ?";
+let users = [["123b","abc_newuserb","123@gmail.comb","abcb"],
+            ["123c","abc_newuserc","123@gmail.comc","abcc"]];
 
 try{
-  connection.query(q,user, (error,result) =>{
+  connection.query(q,[users], (error,result) =>{
     if(error) throw error;
     console.log(result);
   })
