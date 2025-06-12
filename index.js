@@ -8,8 +8,11 @@ const connection =  mysql2.createConnection({
   password: 'abcd@123456',
 });
 
+let q = "INSERT INTO user (id, username,email,password) VALUES (?,?,?,?)";
+let user = ["123","abc_newuser","123@gmail.com","abc"];
+
 try{
-  connection.query("SHOW TABLES", (error,result) =>{
+  connection.query(q,user, (error,result) =>{
     if(error) throw error;
     console.log(result);
   })
