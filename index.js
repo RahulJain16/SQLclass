@@ -8,6 +8,16 @@ const connection =  mysql2.createConnection({
   password: 'abcd@123456',
 });
 
+
+let getRandomUser= () => {
+  return [
+     faker.string.uuid(),
+     faker.internet.username(),
+     faker.internet.email(),
+     faker.internet.password()
+  ];
+}
+
 let q = "INSERT INTO user (id, username,email,password) VALUES ?";
 let data = [];
 for(let i=1; i<100; i++){
@@ -25,12 +35,4 @@ for(let i=1; i<100; i++){
 connection.end();
 */
 
-let getRandomUser= () => {
-  return [
-     faker.string.uuid(),
-     faker.internet.username(),
-     faker.internet.email(),
-     faker.internet.password()
-  ];
-}
 
