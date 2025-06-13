@@ -6,7 +6,7 @@ const path = require("path");
 const methodOverride = require("method-override");
 
 app.use(methodOverride("_method"));
-app.use(express.urlencodeed({extended:true}));
+app.use(express.urlencoded({extended:true}));
 app.set("view engine", "ejs");
 app.set("views",path.join(__dirname,"/views"));
 
