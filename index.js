@@ -66,10 +66,11 @@ app.get("/user/:id/edit",(req,res) =>{
   let {id} = req.params;
   let q = `SELECT * FROM user WHERE id='${id}'`;
    try{
-  connection.query(q, (error,result) =>{
+    connection.query(q, (error,result) =>{
     if(error) throw error;
+    console.log(result[0]);
     let user=result[0];
-    res.render("edit.ejs",user);
+    res.render("edit.ejs",{user});
   })
 } catch(error) {
   console.log(error);
