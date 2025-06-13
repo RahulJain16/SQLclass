@@ -62,6 +62,21 @@ app.get("/user",(req,res) => {
 }
 });
 
+app.get("/user/:id/edit",(req,res) =>{
+  let {id} = req.params;
+  let q = `SELECT * FROM user WHERE id='${id}'`;
+   try{
+  connection.query(q, (error,result) =>{
+    if(error) throw error;
+    let user=result[0];
+    res.render("edit.ejs",user);
+  })
+} catch(error) {
+  console.log(error);
+  res.send("some error in DB");
+}
+})
+
 
 app.listen("8080",() => {
 console.log("app is listening");
