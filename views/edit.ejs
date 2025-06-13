@@ -6,6 +6,9 @@
     <title>EDIT YOUR DETAILS</title>
 </head>
 <body>
-    <h2> YOU ARE ABOUT TO EDIT THIS USER</h2>
+    <h2> YOU ARE ABOUT TO EDIT THIS USER: <%= user.email %></h2>
+    <form>
+        <textarea name="username"> <%= user.username %> </textarea>
+    </form>
 </body>
 </html>
