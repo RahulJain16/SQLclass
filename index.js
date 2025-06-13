@@ -3,7 +3,10 @@ const mysql2 = require('mysql2')
 const express = require("express");
 const app = express();
 const path = require("path");
+const methodOverride = require("method-override");
 
+app.use(methodOverride("_method"));
+app.use(express.urlencodeed({extended:true}));
 app.set("view engine", "ejs");
 app.set("views",path.join(__dirname,"/views"));
 
@@ -62,6 +65,7 @@ app.get("/user",(req,res) => {
 }
 });
 
+//EDIT ROUTE(ONLY FORM)
 app.get("/user/:id/edit",(req,res) =>{
   let {id} = req.params;
   let q = `SELECT * FROM user WHERE id='${id}'`;
@@ -78,6 +82,10 @@ app.get("/user/:id/edit",(req,res) =>{
 }
 })
 
+//UPDATE ROUTE
+app.patch("/user/:id",(req,res) =>{
+  res.send("updated")
+})
 
 app.listen("8080",() => {
 console.log("app is listening");
