@@ -67,7 +67,7 @@ app.get("/user",(req,res) => {
 
 //EDIT ROUTE(ONLY FORM)
 app.get("/user/:id/edit",(req,res) =>{
-  //let {id} = req.params;
+  let {id} = req.params;
   let q = `SELECT * FROM user WHERE id='${id}'`;
    try{
     connection.query(q, (error,result) =>{
