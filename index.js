@@ -37,7 +37,7 @@ for(let i=1; i<100; i++){
 
 //HOME PAGE
 app.get("/",(req,res) => {
-  let q = `SELECT count(*) FROM user`;
+  //let q = `SELECT count(*) FROM user`;
   try{
   connection.query(q, (error,result) =>{
     if(error) throw error;
@@ -67,7 +67,7 @@ app.get("/user",(req,res) => {
 
 //EDIT ROUTE(ONLY FORM)
 app.get("/user/:id/edit",(req,res) =>{
- // let {id} = req.params;
+  let {id} = req.params;
   let q = `SELECT * FROM user WHERE id='${id}'`;
    try{
     connection.query(q, (error,result) =>{
