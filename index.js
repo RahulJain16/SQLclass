@@ -37,7 +37,7 @@ for(let i=1; i<100; i++){
 
 //HOME PAGE
 app.get("/",(req,res) => {
-  let q = `SELECT count(*) FROM user`;
+ // let q = `SELECT count(*) FROM user`;
   try{
   connection.query(q, (error,result) =>{
     if(error) throw error;
